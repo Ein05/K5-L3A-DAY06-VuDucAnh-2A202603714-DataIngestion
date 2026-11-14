@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 from .ingestion import load_corpus
 from .chunking import chunk_strategy_a, chunk_strategy_b, chunk_strategy_c
-from .embeddings import GeminiEmbeddingModel
+from .embeddings import LocalFastEmbedModel
 from .store import PgVectorStore
 from .evaluation import evaluate_retrieval, compute_metrics
 
@@ -54,9 +54,9 @@ def main():
     print(f"-> Chiến lược B (Theo Điều luật):        {len(chunks_b)} chunks")
     print(f"-> Chiến lược C (Điều luật + Metadata):  {len(chunks_c)} chunks")
 
-    # 4. Khởi tạo DB và Embedding Model
+    # 4. Khởi tạo DB và Embedding Model Local
     db_url = os.getenv("DATABASE_URL", "postgresql://day6:day6_local_only@127.0.0.1:55433/day6_lab")
-    embedder = GeminiEmbeddingModel()
+    embedder = LocalFastEmbedModel()
     store = PgVectorStore(database_url=db_url, dimensions=embedder.dimensions)
     store.create_schema()
 
