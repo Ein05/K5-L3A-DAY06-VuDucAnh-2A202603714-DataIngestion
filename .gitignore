@@ -8,3 +8,10 @@ __pycache__/
 .DS_Store
 .pytest_cache/
 *.sqlite
+
+# Data files (large)
+starter/data/
+*.csv
+*.json
+!benchmark/questions.json
+!data/format-example.json
