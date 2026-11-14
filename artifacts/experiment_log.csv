@@ -1,4 +1,4 @@
 experiment_id,strategy,chunking_method,chunk_size,overlap,filter_applied,embedding_model,vector_dim,vector_store,num_chunks,total_characters,ingestion_time_sec,cost_usd,notes
-EXP_01,A,Fixed-size character chunking,500,50,None,paraphrase-multilingual-MiniLM-L12-v2,384,PostgreSQL + pgvector,385,153246,21.02,0.00,Cấu hình baseline cắt cố định 500 ký tự
-EXP_02,B,Semantic Article-based chunking,Full Article,0,None,paraphrase-multilingual-MiniLM-L12-v2,384,PostgreSQL + pgvector,118,153246,7.12,0.00,Cắt bảo toàn trọn vẹn từng Điều luật
-EXP_03,C,Semantic Article + Metadata Filter,Full Article,0,"loai_vb (Luật, Nghị định, Thông tư)",paraphrase-multilingual-MiniLM-L12-v2,384,PostgreSQL + pgvector,118,153246,7.09,0.00,Bảo toàn Điều luật kết hợp lọc metadata SQL
+EXP_01,A,Fixed-size character chunking,500,50,None,paraphrase-multilingual-MiniLM-L12-v2,384,PostgreSQL + pgvector,385,153246,25.58,0.00,Cấu hình baseline cắt cố định 500 ký tự
+EXP_02,B,Semantic Article-based chunking,Full Article,0,None,paraphrase-multilingual-MiniLM-L12-v2,384,PostgreSQL + pgvector,118,153246,8.26,0.00,Cắt bảo toàn trọn vẹn từng Điều luật
+EXP_03,C,Semantic Article + Metadata Filter,Full Article,0,"loai_vb (Luật, Nghị định, Thông tư)",paraphrase-multilingual-MiniLM-L12-v2,384,PostgreSQL + pgvector,118,153246,8.70,0.00,Bảo toàn Điều luật kết hợp lọc metadata SQL
